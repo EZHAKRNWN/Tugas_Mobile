@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'main.dart';
 
 class CalendarConversionPage extends StatelessWidget {
   const CalendarConversionPage({super.key});
@@ -89,7 +90,7 @@ class _WetonTabState extends State<_WetonTab> {
         children: [
           Card(
             child: ListTile(
-              leading: const Icon(Icons.calendar_today, color: Colors.red),
+              leading: const Icon(Icons.calendar_today, color: AppColors.gold),
               title: const Text('Tanggal Masehi'),
               subtitle: Text('${_selectedDate.day}/${_selectedDate.month}/${_selectedDate.year}'),
               trailing: TextButton(onPressed: _pickDate, child: const Text('Pilih')),
@@ -99,14 +100,14 @@ class _WetonTabState extends State<_WetonTab> {
           Container(
             width: double.infinity,
             padding: const EdgeInsets.all(24),
-            decoration: BoxDecoration(color: Colors.red.shade50, borderRadius: BorderRadius.circular(16)),
+            decoration: BoxDecoration(color: AppColors.goldLight, borderRadius: BorderRadius.circular(16)),
             child: Column(
               children: [
                 const Text('Weton', style: TextStyle(color: Colors.grey)),
                 const SizedBox(height: 8),
                 Text(
                   '$hariName $pasaranName',
-                  style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.red),
+                  style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: AppColors.navy),
                 ),
                 const SizedBox(height: 4),
                 Text('Neptu: $neptu', style: const TextStyle(color: Colors.grey)),
@@ -116,7 +117,7 @@ class _WetonTabState extends State<_WetonTab> {
           const SizedBox(height: 16),
           Card(
             child: ListTile(
-              leading: const Icon(Icons.event_repeat, color: Colors.red),
+              leading: const Icon(Icons.event_repeat, color: AppColors.gold),
               title: const Text('Wuku'),
               subtitle: Text(wukuName),
             ),
@@ -166,7 +167,7 @@ class _SakaTabState extends State<_SakaTab> {
         children: [
           Card(
             child: ListTile(
-              leading: const Icon(Icons.calendar_today, color: Colors.red),
+              leading: const Icon(Icons.calendar_today, color: AppColors.gold),
               title: const Text('Tanggal Masehi'),
               subtitle: Text('${_selectedDate.day}/${_selectedDate.month}/${_selectedDate.year}'),
               trailing: TextButton(onPressed: _pickDate, child: const Text('Pilih')),
@@ -176,14 +177,14 @@ class _SakaTabState extends State<_SakaTab> {
           Container(
             width: double.infinity,
             padding: const EdgeInsets.all(24),
-            decoration: BoxDecoration(color: Colors.red.shade50, borderRadius: BorderRadius.circular(16)),
+            decoration: BoxDecoration(color: AppColors.goldLight, borderRadius: BorderRadius.circular(16)),
             child: Column(
               children: [
                 const Text('Tahun Saka', style: TextStyle(color: Colors.grey)),
                 const SizedBox(height: 8),
                 Text(
                   '$sakaYear',
-                  style: const TextStyle(fontSize: 40, fontWeight: FontWeight.bold, color: Colors.red),
+                  style: const TextStyle(fontSize: 40, fontWeight: FontWeight.bold, color: AppColors.navy),
                 ),
               ],
             ),

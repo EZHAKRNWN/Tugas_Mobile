@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'main.dart';
 
 class StopwatchPage extends StatefulWidget {
   const StopwatchPage({super.key});
@@ -87,8 +88,8 @@ class _StopwatchPageState extends State<StopwatchPage> {
               ElevatedButton.icon(
                 onPressed: isRunning ? _pause : _start,
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: isRunning ? Colors.orange : Colors.red,
-                  foregroundColor: Colors.white,
+                  backgroundColor: isRunning ? AppColors.gold : AppColors.navy,
+                  foregroundColor: isRunning ? AppColors.navy : Colors.white,
                 ),
                 icon: Icon(isRunning ? Icons.pause : Icons.play_arrow),
                 label: Text(isRunning ? 'Jeda' : 'Mulai'),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../main.dart';
 import '../models/mata_kuliah_model.dart';
 import '../services/api_service.dart';
 
@@ -159,8 +160,8 @@ class _IpkTabState extends State<_IpkTab> {
                   subtitle: Text('${mk.sks} SKS × ${mk.bobot.toStringAsFixed(1)} = ${(mk.sks * mk.bobot).toStringAsFixed(1)}'),
                   trailing: CircleAvatar(
                     radius: 16,
-                    backgroundColor: Colors.red.shade50,
-                    child: Text(mk.nilaiHuruf, style: const TextStyle(fontSize: 12, color: Colors.red)),
+                    backgroundColor: AppColors.goldLight,
+                    child: Text(mk.nilaiHuruf, style: const TextStyle(fontSize: 12, color: AppColors.navy, fontWeight: FontWeight.w600)),
                   ),
                 ),
               )),

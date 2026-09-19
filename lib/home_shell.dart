@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'main.dart';
 import 'main_menu_page.dart';
 import 'stopwatch_page.dart';
 import 'help_page.dart';
@@ -25,7 +26,7 @@ class _HomeShellState extends State<HomeShell> {
       body: IndexedStack(index: _currentIndex, children: _pages),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,
-        selectedItemColor: Colors.red,
+        selectedItemColor: AppColors.navy,
         unselectedItemColor: Colors.grey,
         onTap: (index) => setState(() => _currentIndex = index),
         items: const [

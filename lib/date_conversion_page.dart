@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'main.dart';
 
 class DateConversionPage extends StatelessWidget {
   const DateConversionPage({super.key});
@@ -86,7 +87,7 @@ class _HijriTabState extends State<_HijriTab> {
         children: [
           Card(
             child: ListTile(
-              leading: const Icon(Icons.calendar_today, color: Colors.red),
+              leading: const Icon(Icons.calendar_today, color: AppColors.gold),
               title: const Text('Tanggal Masehi'),
               subtitle: Text('${_selectedDate.day}/${_selectedDate.month}/${_selectedDate.year}'),
               trailing: TextButton(onPressed: _pickDate, child: const Text('Pilih')),
@@ -97,7 +98,7 @@ class _HijriTabState extends State<_HijriTab> {
             width: double.infinity,
             padding: const EdgeInsets.all(24),
             decoration: BoxDecoration(
-              color: Colors.red.shade50,
+              color: AppColors.goldLight,
               borderRadius: BorderRadius.circular(16),
             ),
             child: Column(
@@ -106,7 +107,7 @@ class _HijriTabState extends State<_HijriTab> {
                 const SizedBox(height: 8),
                 Text(
                   '${hijri['day']} $monthName ${hijri['year']} H',
-                  style: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold, color: Colors.red),
+                  style: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold, color: AppColors.navy),
                   textAlign: TextAlign.center,
                 ),
               ],
@@ -174,7 +175,7 @@ class _AgeTabState extends State<_AgeTab> {
         children: [
           Card(
             child: ListTile(
-              leading: const Icon(Icons.cake_outlined, color: Colors.red),
+              leading: const Icon(Icons.cake_outlined, color: AppColors.gold),
               title: const Text('Tanggal Lahir'),
               subtitle: Text(_birthDate == null
                   ? 'Belum dipilih'
@@ -187,7 +188,7 @@ class _AgeTabState extends State<_AgeTab> {
             Container(
               width: double.infinity,
               padding: const EdgeInsets.all(20),
-              decoration: BoxDecoration(color: Colors.red.shade50, borderRadius: BorderRadius.circular(16)),
+              decoration: BoxDecoration(color: AppColors.goldLight, borderRadius: BorderRadius.circular(16)),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
@@ -217,7 +218,7 @@ class _AgeTabState extends State<_AgeTab> {
   Widget _ageBox(String value, String label) {
     return Column(
       children: [
-        Text(value, style: const TextStyle(fontSize: 28, fontWeight: FontWeight.bold, color: Colors.red)),
+        Text(value, style: const TextStyle(fontSize: 28, fontWeight: FontWeight.bold, color: AppColors.navy)),
         Text(label, style: const TextStyle(fontSize: 12, color: Colors.grey)),
       ],
     );

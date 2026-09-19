@@ -1,9 +1,19 @@
 import 'package:flutter/material.dart';
+import 'main.dart';
 import 'services/session_service.dart';
 import 'login_page.dart';
 
 class HelpPage extends StatelessWidget {
   const HelpPage({super.key});
+
+  static const _items = [
+    _HelpItem(icon: Icons.groups_outlined, title: 'Daftar Anggota', desc: 'Menampilkan data anggota kelompok.'),
+    _HelpItem(icon: Icons.calculate_outlined, title: 'Kalkulator', desc: 'IPK otomatis dari data mata kuliah, dan kalkulator umum (tambah/kurang/kali/bagi, ganjil-genap, jumlah total).'),
+    _HelpItem(icon: Icons.school_outlined, title: 'Data Mata Kuliah', desc: 'Tambah, ubah, hapus data mata kuliah (CRUD).'),
+    _HelpItem(icon: Icons.calendar_month_outlined, title: 'Konversi Tanggal', desc: 'Konversi Masehi ke Hijriah dan hitung umur.'),
+    _HelpItem(icon: Icons.event_note_outlined, title: 'Kalender Weton & Saka', desc: 'Konversi ke weton Jawa dan kalender Saka Bali.'),
+    _HelpItem(icon: Icons.timer_outlined, title: 'Stopwatch', desc: 'Stopwatch dengan fitur lap.'),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -13,14 +23,21 @@ class HelpPage extends StatelessWidget {
         padding: const EdgeInsets.all(20),
         children: [
           const Text('Cara Penggunaan Aplikasi',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-          const SizedBox(height: 12),
-          _helpItem('1. Daftar Anggota', 'Menampilkan data anggota kelompok.'),
-          _helpItem('2. Kalkulator IPK', 'Menghitung IPK otomatis dari data mata kuliah.'),
-          _helpItem('3. Data Mata Kuliah', 'Tambah, ubah, hapus data mata kuliah (CRUD).'),
-          _helpItem('4. Konversi Tanggal', 'Konversi Masehi ke Hijriah dan hitung umur.'),
-          _helpItem('5. Kalender Weton & Saka', 'Konversi ke weton Jawa dan kalender Saka Bali.'),
-          _helpItem('6. Stopwatch', 'Stopwatch sederhana untuk menghitung waktu.'),
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: AppColors.textDark)),
+          const SizedBox(height: 16),
+          ..._items.map((item) => Card(
+                margin: const EdgeInsets.only(bottom: 10),
+                child: ListTile(
+                  leading: Container(
+                    width: 40,
+                    height: 40,
+                    decoration: BoxDecoration(color: AppColors.goldLight, borderRadius: BorderRadius.circular(10)),
+                    child: Icon(item.icon, color: AppColors.navy, size: 20),
+                  ),
+                  title: Text(item.title, style: const TextStyle(fontWeight: FontWeight.w600)),
+                  subtitle: Text(item.desc, style: TextStyle(color: Colors.grey.shade600, fontSize: 13)),
+                ),
+              )),
           const SizedBox(height: 24),
           SizedBox(
             width: double.infinity,
@@ -43,18 +60,11 @@ class HelpPage extends StatelessWidget {
       ),
     );
   }
+}
 
-  Widget _helpItem(String title, String desc) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 14),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(title, style: const TextStyle(fontWeight: FontWeight.bold)),
-          const SizedBox(height: 4),
-          Text(desc, style: const TextStyle(color: Colors.grey)),
-        ],
-      ),
-    );
-  }
+class _HelpItem {
+  final IconData icon;
+  final String title;
+  final String desc;
+  const _HelpItem({required this.icon, required this.title, required this.desc});
 }

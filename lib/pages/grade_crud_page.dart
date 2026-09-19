@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../main.dart';
 import '../models/mata_kuliah_model.dart';
 import '../services/api_service.dart';
 
@@ -201,7 +202,7 @@ class _GradeCrudPageState extends State<GradeCrudPage> {
       body: _buildBody(),
       floatingActionButton: FloatingActionButton(
         onPressed: () => _showFormDialog(),
-        backgroundColor: Colors.red,
+        backgroundColor: AppColors.navy,
         child: const Icon(Icons.add, color: Colors.white),
       ),
     );
@@ -286,7 +287,7 @@ class _GradeCrudPageState extends State<GradeCrudPage> {
                     ),
                   ),
                   IconButton(
-                    icon: const Icon(Icons.edit, color: Colors.blueGrey, size: 20),
+                    icon: const Icon(Icons.edit, color: AppColors.navy, size: 20),
                     onPressed: () => _showFormDialog(existing: mk),
                   ),
                   IconButton(
